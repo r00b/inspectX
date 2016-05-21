@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mechanic_search.user_id %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @mechanic_search.zip %>
+</p>
+
+<p>
+  <strong>Vehicle make:</strong>
+  <%= @mechanic_search.vehicle_make %>
+</p>
+
+<%= link_to 'Edit', edit_mechanic_search_path(@mechanic_search) %> |
+<%= link_to 'Back', mechanic_searches_path %>

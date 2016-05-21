@@ -1,0 +1,30 @@
+<%= simple_form_for @mechanic do |f| %>
+
+  <%= f.simple_fields_for :user, @user do |u| %>
+    <%= u.error_notification %>
+    <div class="form-inputs">
+      <%= u.input :name %>
+      <%= u.input :email %>
+      <%= u.input :password %>
+      <%= u.input :password_confirmation %>
+    </div>
+  <% end %>
+
+  <%= f.error_notification %>
+  <div class="form-inputs">
+
+    <%= f.input :bio %>
+    <%= f.input :kind %>
+    <%= f.input :company %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.input :speciality %>
+    <%= f.input :price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

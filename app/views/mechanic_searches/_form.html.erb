@@ -1,0 +1,13 @@
+<%= simple_form_for(@mechanic_search) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :zip %>
+    <%= f.input :vehicle_make %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

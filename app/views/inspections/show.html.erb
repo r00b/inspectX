@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mechanic:</strong>
+  <%= @inspection.mechanic_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @inspection.user_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @inspection.location %>
+</p>
+
+<p>
+  <strong>Vehicle year:</strong>
+  <%= @inspection.vehicle_year %>
+</p>
+
+<p>
+  <strong>Vehicle make:</strong>
+  <%= @inspection.vehicle_make %>
+</p>
+
+<p>
+  <strong>Vehicle model:</strong>
+  <%= @inspection.vehicle_model %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @inspection.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @inspection.time %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @inspection.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @inspection.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_inspection_path(@inspection) %> |
+<%= link_to 'Back', inspections_path %>

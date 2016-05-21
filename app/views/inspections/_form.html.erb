@@ -1,0 +1,61 @@
+
+<%= render 'layouts/app_navigation' %>
+<section>
+  <div class="container">
+    <%= simple_form_for(@inspection) do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.error_notification %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-left">Buyer Info</h3>
+        <div class="form-inputs">
+          <span>Your Name - First and Last</span>
+          <span>Your Address</span>
+          <span>Your Phone</span>
+          <span>Your Email</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-left">Vehicle Info</h3>
+         <div class="form-inputs">
+          <span>Vehicle Year</span>
+          <%= f.input :vehicle_year %>
+          <span>Vehicle Make</span>
+          <%= f.input :vehicle_make %>
+          <span>Vehicle Model</span>
+          <%= f.input :vehicle_model %>
+        </div>
+      </div>
+    </div>      
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-left">Inspection Info</h3>
+         <div class="form-inputs">
+          <span>Seller Name</span>
+          <span>Inspection Location</span>
+          <%= f.input :location %>
+          <span>Inspection Date</span>
+          <%= f.input :date %>
+          <span>Inspection Time</span>
+          <%= f.input :time %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-left">Payment</h3>
+         <div class="form-inputs">
+          <span>Mechanic Rate</span>
+          <span>Button for confirm and pay</span>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>  
+</section>
+
+    
+

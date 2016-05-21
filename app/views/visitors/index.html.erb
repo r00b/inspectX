@@ -1,0 +1,181 @@
+   <body class="appear-animate" id="home">
+    <!-- Page Loader Start-->
+    <div class="page-loader">
+      <div class="loader">Loading</div><span class="loader-text alt-font">InspectX</span>
+    </div>
+    <div id="top"></div>
+      
+        <%= render 'layouts/navigation' %>
+<section id="hero" class="full-screen">
+      <!--Parallax image-->
+      <div data-background="/assets/home-banner.jpg" data-top="transform: translate3d(0px, 0px, 0px)" data-top-bottom="transform: translate3d(0px, -200px, 0px)" data-anchor-target="#hero" class="parallax parallax-hero full-screen bg-dark-50"></div>
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <h1 data-wow-delay="0.5s" data-wow-duration="3s" class="hs-line-8 wow fadeInDown">Car Inspections. Re-Invented.</h1>
+          <div data-wow-delay="0.5s" data-wow-duration="3s" class="hs-line-9 wow fadeInDown"> The easy, no hassle way of getting your car pre-purchase inspection done.</div><a href="#pricing" data-wow-delay="0.5s" data-wow-duration="3s" class="scroll btn btn-coffee btn-color-w btn-circle btn-medium mb-xxs-40 wow fadeIn">Get started</a><span>&nbsp; &nbsp;</span><a href="https://vimeo.com/79876010" data-wow-delay="0.5s" data-wow-duration="3s" class="scroll btn btn-coffee btn-border-w btn-circle btn-medium magnific mfp-iframe wow fadeIn"><i class="fa fa-play-circle-o"></i> Watch video</a>
+        </div>
+      </div><a href="#page" data-start="display: block" data-100-start="display: none" class="btn-scroll-down scroll"></a>
+      </div>
+</section>
+<div id="page" class="page">
+<!--Start section about-->
+    <section id="about">
+        <div class="container pb-40">
+            <div class="row">
+                <div data-wow-delay="0.1s" data-wow-duration="1s" class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
+                    <blockquote class="service-quote">
+                    <p> inspectX simplifies your used car search. Our expert, user-reviewed mechanics work full-time in the automotive field and are capable of providing you with a thorough look at a vehicle’s cosmetic and mechanical condition before you buy. Our comprehensive 150-point inspection checklist ensures that every vehicle system is diligently examined. And our innovative pricing marketplace means that brand-specialized mechanics compete for your business.</p>
+
+                    <p>Experience inspectX-certified peace of mind before your next purchase.</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                  <div class="features-item text-center">
+                    <div class="features-icon">
+                      <div class="icon-speedometer"></div>
+                    </div>
+                    <h3 class="features-title alt-font">Fast</h3>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="features-item text-center">
+                    <div class="features-icon">
+                      <div class="icon-recycle"></div>
+                    </div>
+                    <h3 class="features-title alt-font">Simple to use</h3>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="features-item text-center">
+                    <div class="features-icon">
+                      <div class="icon-heart"></div>
+                    </div>
+                    <h3 class="features-title alt-font">Users love us</h3>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light pt-40 pb-40 mt-80" id="howitworks">
+          <div class="container">
+            <div class="row">
+              <div data-wow-delay="0.1s" data-wow-duration="1s" class="col-md-7 wow fadeIn"><img src="/assets/about.jpg" alt="" class="resp"></div>
+              <div class="col-md-5 col-lg-4 col-lg-offset-1">
+                <h3 class="alt-font">How It Works</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti porro voluptates laboriosam modi est ducimus sapiente qui rerum soluta quia quisquam perferendis atque recusandae fugit molestiae ad laborum, natus explicabo odio. Esse neque, asperiores quo.</p>
+                <div class="mt-40"><a href="#" class="btn btn-coffee btn-color btn-round btn-medium">Learn more</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="pt-40 pb-40" id="mechanic">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7 col-sm-10 col-sm-offset-2 visible-sm visible-xs"><img src="" alt="" class="resp"></div>
+              <div class="col-md-5 col-lg-4 col-lg-offset-1">
+                <h3 class="alt-font">Find A Mechanic</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti porro voluptates laboriosam modi est ducimus sapiente qui rerum soluta quia quisquam perferendis atque recusandae fugit molestiae ad laborum, natus explicabo odio. Esse neque, asperiores quo.</p>
+                <div class="mt-40"><a href="https://vimeo.com/79876010" class="btn btn-coffee btn-round btn-color btn-medium magnific mfp-iframe">Get Started</a></div>
+              </div>
+              <div data-wow-delay="0.1s" data-wow-duration="1s" class="col-md-5 col-md-offset-1 hidden-sm hidden-xs wow fadeIn"><img src="assets/mechanic2.jpg" alt="" class="resp"></div>
+            </div>
+          </div>
+        </div>
+        <div class="small-section bg-light call-to-action pb-60">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-7">
+                <h4 class="alt-font">Want To Register As A Mechanic</h4>
+                <h5> Register as a mechanic today! Start making money helping potential car buyers get the best vehicle with our pre-purchase inspections.</h5>
+              </div>
+              <div class="col-sm-5 text-center"><%= link_to 'Get Started', new_mechanic_path, class: "scroll btn btn-coffee btn-border btn-large mt-20" %></div>
+            </div>
+          </div>
+        </div>
+</section>
+<section>
+        <!--Testimonial slider start-->
+        <div class="fullwidth-testimotal-slider bg-dark-80 pt-100 pb-100">
+          <!--Item start-->
+          <div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                  <div class="section-icon"><span class="icon-quote"></span></div>
+                  <h3 class="alt-font">What people say?</h3>
+                  <blockquote class="testimonial">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur reprehenderit praesentium repellat officia ea corrupti rem architecto soluta, necessitatibus sequi.</p>
+                    <footer class="testimonial-author">John Doe, Pied Piper</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Item end-->
+          <!--Item start-->
+          <div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                  <div class="section-icon"><span class="icon-quote"></span></div>
+                  <h3 class="alt-font">What people say?</h3>
+                  <blockquote class="testimonial">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur reprehenderit praesentium repellat officia ea corrupti rem architecto soluta, necessitatibus sequi.</p>
+                    <footer class="testimonial-author">Lary Clark, Pied Piper</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Item end-->
+          <!--Item start-->
+          <div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                  <div class="section-icon"><span class="icon-quote"></span></div>
+                  <h3 class="alt-font">What people say?</h3>
+                  <blockquote class="testimonial">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur reprehenderit praesentium repellat officia ea corrupti rem architecto soluta, necessitatibus sequi.</p>
+                    <footer class="testimonial-author">Mike Rose, Pied Piper</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Item end -->
+        </div>
+        <!--Testimonial slider end-->
+      </section>
+      <hr>
+      
+      <section id="contacts" class="pt-0">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center mt-60 mt-xs-30">
+              <h3> <b>Contacts</b></h3>
+            </div>
+          </div>
+          <div class="row mt-20">
+            <div class="col-md-8 col-md-offset-2 text-center">
+              
+            </div>
+          </div>
+          <div class="row mt-60 mt-xs-30">
+            <div class="col-md-8 col-md-offset-2 text-center">
+              <div class="col-sm-4 contact-item"><span class="icon-phone"></span>
+                <p>(002) 123 4511</p>
+              </div>
+              <div class="col-sm-4 contact-item"><span class="icon-map-pin"></span>
+                <p>245 Park Street, Charlotte,<br>NC 123456, USA</p>
+              </div>
+              <div class="col-sm-4 contact-item"><span class="icon-envelope"></span><a href="mailto:support@ideasweb.com" target="_blank">support@ideasweb.com</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%= render 'layouts/footer' %>
+  </body>

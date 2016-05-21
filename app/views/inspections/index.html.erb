@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inspections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mechanic</th>
+      <th>User</th>
+      <th>Location</th>
+      <th>Vehicle year</th>
+      <th>Vehicle make</th>
+      <th>Vehicle model</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inspections.each do |inspection| %>
+      <tr>
+        <td><%= inspection.mechanic_id %></td>
+        <td><%= inspection.user_id %></td>
+        <td><%= inspection.location %></td>
+        <td><%= inspection.vehicle_year %></td>
+        <td><%= inspection.vehicle_make %></td>
+        <td><%= inspection.vehicle_model %></td>
+        <td><%= inspection.date %></td>
+        <td><%= inspection.time %></td>
+        <td><%= inspection.created_at %></td>
+        <td><%= inspection.updated_at %></td>
+        <td><%= link_to 'Show', inspection %></td>
+        <td><%= link_to 'Edit', edit_inspection_path(inspection) %></td>
+        <td><%= link_to 'Destroy', inspection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inspection', new_inspection_path %>

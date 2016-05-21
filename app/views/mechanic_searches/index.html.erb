@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mechanic Searches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Zip</th>
+      <th>Vehicle make</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mechanic_searches.each do |mechanic_search| %>
+      <tr>
+        <td><%= mechanic_search.user_id %></td>
+        <td><%= mechanic_search.zip %></td>
+        <td><%= mechanic_search.vehicle_make %></td>
+        <td><%= link_to 'Show', mechanic_search %></td>
+        <td><%= link_to 'Edit', edit_mechanic_search_path(mechanic_search) %></td>
+        <td><%= link_to 'Destroy', mechanic_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mechanic search', new_mechanic_search_path %>
