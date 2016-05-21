@@ -1,12 +1,16 @@
 class MechanicsController < ApplicationController
+  #devise authorization
+  #before_action :authenticate_user!
+  
   #cancan authorization
   #load_and_authorize_resource
-  before_action :set_mechanic, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_mechanic, only: [:show, :edit, :update, :destroy, :approve]
 
   # GET /mechanics
   # GET /mechanics.json
   def index
-    @mechanics = Mechanic.all
+    @mechanics = Mechanic.where approved: true
   end
 
   # GET /mechanics/1
@@ -30,6 +34,7 @@ class MechanicsController < ApplicationController
     
     @mechanic = Mechanic.new(mechanic_params)
     @user = User.new(user_params[:user])
+    @user.role = :mechanic
 
     respond_to do |format|
       if @user.save
@@ -70,6 +75,24 @@ class MechanicsController < ApplicationController
       format.html { redirect_to mechanics_url, notice: 'Mechanic was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /mechanics/1/approve
+  def approve
+    #cancan authorization
+    authorize! :all, @mechanic
+    @mechanic.approve
+    if @mechanic.save
+      redirect_to action: :unapproved # notice: 'Mechanic was successfully approved.'
+    else
+      redirect_to render :unapproved, error: @mechanic.errors
+    end
+  end
+
+  # GET /mechanics/unapproved
+  def unapproved
+    authorize! :all, @mechanics
+    @mechanics = Mechanic.where approved: false
   end
 
   private

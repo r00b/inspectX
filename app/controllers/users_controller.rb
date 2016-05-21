@@ -1,19 +1,21 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only, :except => :show
+  #before_action :admin_only, except: [:show, :set_admin]
+  before_action :set_user, only: [:set_admin]
 
   def index
-    @user = User.find(params[:id])
-    @inspection = Inspection.find(params[:id])
+    redirect_to :root
+   # @user = User.find(params[:id])
+   # @inspection = Inspection.find(params[:id])
   end
 
   def show
     @user = User.find(params[:id])
-    unless current_user.admin?
-      unless @user == current_user
-        redirect_to :root, :alert => "Access denied."
-      end
-    end
+    # unless current_user.admin?
+    #   unless @user == current_user
+    #     redirect_to :root, :alert => "Access denied."
+    #   end
+    # end
   end
 
   def update
@@ -31,6 +33,13 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => "User deleted."
   end
 
+  def set_admin
+    @user.role = User.roles[:admin]
+    if @user.save
+      redirect_to @user, :notice => "User updated."
+    end
+  end
+
   private
 
   def admin_only
@@ -41,6 +50,10 @@ class UsersController < ApplicationController
 
   def secure_params
     params.require(:user).permit(:role)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end

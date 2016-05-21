@@ -1,17 +1,10 @@
 class User < ActiveRecord::Base
   has_many :inspections
   has_one :mechanic
-  #test it
-  enum role: [:customer, :mechanic, :admin]
-  
-  # after_initialize :set_default_user_type, :if => :new_record?
-
-  # def set_default_type
-  #   self.user_type ||= :customer
-  # end
+  enum roles: [:customer, :mechanic, :admin]
 
   def has_role?(role)
-    self.role == role
+    self.role == User.roles[role]
   end
 
   def admin?
