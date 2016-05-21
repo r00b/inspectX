@@ -1,6 +1,15 @@
 <%= render 'layouts/app_navigation' %>
+<div class="container">
 <section>
-  <div class="container">
+  <%= form_tag(mechanics_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Mechanics" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+  
+</section>
+
+
+<section>
     <% if @mechanics.empty? %>
       There's no mechanics to show.
     <% end %>

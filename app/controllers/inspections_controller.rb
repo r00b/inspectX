@@ -4,12 +4,25 @@ class InspectionsController < ApplicationController
   # GET /inspections
   # GET /inspections.json
   def index
-    @inspections = Inspection.all
+    @inspections = Inspection.where(user_id: current_user.id)
+    
   end
 
   # GET /inspections/1
   # GET /inspections/1.json
   def show
+    @inspections = Inspection.find(params[:id])
+  end
+  
+  def create 
+    @inspection.user_id = current_user.id
+    if @inspection.save
+            flash[:success] = "Your Inspection was created successfully!"
+            redirect_to jobs_path
+            
+        else
+            render :new
+        end
   end
 
   # GET /inspections/new

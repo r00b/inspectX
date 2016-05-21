@@ -1,5 +1,11 @@
-<h1>New Mechanic</h1>
+<%= render 'layouts/app_navigation' %>
+<section>
+  <div class="container">
+        <h1>Register As A Mechanic</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', mechanics_path %>
+        <%= render 'form' %>
+<hr>
+<br>
+        <%= link_to 'Back', mechanics_path, class: "btn btn-outline" %>
+    </div>
+</section>

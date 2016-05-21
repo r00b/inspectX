@@ -7,3 +7,6 @@ class Mechanic < ActiveRecord::Base
   end
 
 end
+  def self.search(search)
+    where("name LIKE ? OR ingredients LIKE ? OR cooking_instructions LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+  end

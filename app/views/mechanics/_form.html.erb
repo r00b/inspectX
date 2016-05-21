@@ -2,29 +2,29 @@
 
   <%= f.simple_fields_for :user, @user do |u| %>
     <%= u.error_notification %>
-    <div class="form-inputs">
-      <%= u.input :name %>
-      <%= u.input :email %>
+    <div class="form-inputs col-md-6">
+      <%= u.input :name, label: 'Your Name' %>
+      <%= u.input :email, label: 'Your Email' %>
       <%= u.input :password %>
       <%= u.input :password_confirmation %>
     </div>
   <% end %>
 
-  <%= f.error_notification %>
-  <div class="form-inputs">
 
-    <%= f.input :bio %>
-    <%= f.input :kind %>
-    <%= f.input :company %>
-    <%= f.input :address %>
+  <%= f.error_notification %>
+  <div class="form-inputs col-md-6">
+
+    <%= f.input :bio, label: 'Short Description' %>
+    <%= f.input :company, label: 'Your Company' %>
+    <%= f.input :address, label: 'Your Address' %>
     <%= f.input :city %>
     <%= f.input :state %>
     <%= f.input :zip %>
-    <%= f.input :speciality %>
-    <%= f.input :price %>
+    
+    <%= f.input :speciality, label: 'Vehicle Make Speciality' %>
+    <%= f.input :price, label: 'Your Inspection Price' %>
   </div>
-
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Register Today' %>
   </div>
 <% end %>

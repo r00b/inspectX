@@ -11,6 +11,12 @@ class MechanicsController < ApplicationController
   # GET /mechanics.json
   def index
     @mechanics = Mechanic.where approved: true
+    @mechanics = Mechanic.all
+    if params[:search]
+      @mechanics = Mechanic.search(params[:search]).order("created_at DESC")
+    else
+      @mechanics = Mechanic.all.order("created_at DESC")
+    end
   end
 
   # GET /mechanics/1
