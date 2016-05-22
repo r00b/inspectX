@@ -5,23 +5,26 @@ class MechanicsController < ApplicationController
   #cancan authorization
   #load_and_authorize_resource
 
-  before_action :set_mechanic, only: [:show, :edit, :update, :destroy, :approve]
+  #before_action :set_mechanic, only: [:show, :edit, :update, :destroy, :approve]
 
   # GET /mechanics
   # GET /mechanics.json
   def index
+    
+    #@mechanics = Mechanic.all
     @mechanics = Mechanic.where approved: true
-    @mechanics = Mechanic.all
     if params[:search]
-      @mechanics = Mechanic.search(params[:search]).order("created_at DESC")
+     @mechanics = Mechanic.search(params[:search]).where(addresses: {zip: params[:zip]})
     else
-      @mechanics = Mechanic.all.order("created_at DESC")
+     @mechanics = Mechanic.all.order("created_at DESC")
     end
   end
 
   # GET /mechanics/1
   # GET /mechanics/1.json
   def show
+    @mechanics = Mechanic.find(params[:id])
+    #@inspections = @user.inspections
   end
 
   # GET /mechanics/new
@@ -58,6 +61,16 @@ class MechanicsController < ApplicationController
       end
     end
   end
+  
+  def search(mechanics)
+    mechanics = mechanics.includes(:address, :mechanic_profile, :specialties).references(:specialties).where(addresses: {zip: params[:zip]})
+
+    if mechanics.count > 20 && params[:make]
+      mech = mechanics.where(specialties: {vehicle_make: params[:make].capitalize})
+      if mech.count >= 5
+        mechanics = mech
+      end
+    end
 
   # PATCH/PUT /mechanics/1
   # PATCH/PUT /mechanics/1.json
@@ -103,9 +116,9 @@ class MechanicsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_mechanic
-      @mechanic = Mechanic.find(params[:id])
-    end
+    #def set_mechanic
+      #@mechanic = Mechanic.find(params[:id])
+    #end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mechanic_params
@@ -115,4 +128,5 @@ class MechanicsController < ApplicationController
     def user_params
       params.require(:mechanic).permit(user: [:name, :email, :password, :password_confirmation])
     end
+  end
 end

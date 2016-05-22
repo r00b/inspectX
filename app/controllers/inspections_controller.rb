@@ -27,7 +27,7 @@ class InspectionsController < ApplicationController
 
   # GET /inspections/new
   def new
-    @inspection = current_user.inspection.build
+    @inspection = Inspection.new
   end
 
   # GET /inspections/1/edit

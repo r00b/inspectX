@@ -1,9 +1,45 @@
-   <body class="appear-animate" id="home">
+ <body class="appear-animate" id="home">
     <!-- Page Loader Start-->
     <div class="page-loader">
       <div class="loader">Loading</div><span class="loader-text alt-font">InspectX</span>
     </div>
     <div id="top"></div>
+    
+<% if user_signed_in? %>
+<%= render 'layouts/app_navigation' %>
+<br>
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">Welcome Back</h1>
+    </div>
+<hr>
+<br/>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Your Inspections</h3>
+        <% @inspections = Inspection.where(user_id: current_user.id) %>
+        <% @inspections.each do |job| %>
+        <p><%= link_to inspection.inspection_title, inspection_path(inspection) %></p>
+        <% end %> 
+        
+    </div>
+  <div class="col-md-4">
+    <h3>Start A New Inspection</h3>
+    <p><a href="/mechanics/" class="scroll btn btn-coffee btn-border btn-large mt-20">Find A Mechanic</a>
+</div>
+<hr>
+<br/>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+    </div>
+</div>
+</div>
+<% else %>    
+    
       
         <%= render 'layouts/navigation' %>
 <section id="hero" class="full-screen">
@@ -177,5 +213,6 @@
           </div>
         </div>
       </section>
+      <% end %>
       <%= render 'layouts/footer' %>
   </body>
