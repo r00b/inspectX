@@ -1,0 +1,43 @@
+<%= render 'layouts/app_navigation' %>
+<% if @mechanic && @mechanic.errors.any? %>
+  <div class="alert alert-dismissable alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <h2><%= pluralize(@mechanic.errors.count, "error") %> prohibited this mechanic from being approved:</h2>
+      <ul>
+      <% @mechanics.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <%= notice %>
+  </div>
+<% end %>
+<section>
+  <div class="container">
+    <% if @mechanics.empty? %>
+      All mechanics are approved
+    <% end %>
+    <% @mechanics.each do |mechanic| %>
+    <div class="row">
+      <div class="col-md-4 mechanic-overview">
+        <div class="col-md-6">
+          <h3 class="text-center">Name: <%=  mechanic.user.present? ? mechanic.user.name : "" %></h3>
+          <h4 class="text-left">Email: <%=  mechanic.user.present? ? mechanic.user.email : "" %></h4>
+          <h4 class="text-left">Bio: <%= mechanic.bio %></h4>
+          <h4 class="text-left">Kind: <%= mechanic.kind %></h4>
+          <h4 class="text-left">Company: <%= mechanic.company %></h4>
+          <h4 class="text-left">Address: <%= mechanic.address %></h4>
+          <h4 class="text-left">City: <%= mechanic.city %></h4>
+          <h4 class="text-left">State: <%= mechanic.state %></h4>
+          <h4 class="text-left">Zip: <%= mechanic.zip %></h4>
+          <h4 class="text-left">Approved: <%= mechanic.approved ? "Yes" : "No" %></h4>
+        </div>
+        <div class="col-md-6">
+          <span class="mechanic-price"></span>
+          <%= link_to 'Show', mechanic %>
+          <%= link_to 'Approve', approve_mechanic_path(mechanic) %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
