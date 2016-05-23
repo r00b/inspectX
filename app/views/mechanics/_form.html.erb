@@ -21,7 +21,7 @@
     <%= f.input :state %>
     <%= f.input :zip %>
     
-    <%= f.input :speciality, label: 'Vehicle Make Speciality' %>
+    <%= f.input :speciality,  as: :select_picker, collection: Edmunds::Make.new.find_all.map { |user| user['name'] }, label: 'Vehicle Make Speciality' %>
     <%= f.input :price, label: 'Your Inspection Price' %>
   </div>
   <div class="form-actions">

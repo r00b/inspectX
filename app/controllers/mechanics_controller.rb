@@ -10,11 +10,9 @@ class MechanicsController < ApplicationController
   # GET /mechanics
   # GET /mechanics.json
   def index
-    
-    #@mechanics = Mechanic.all
     @mechanics = Mechanic.where approved: true
     if params[:search]
-     @mechanics = Mechanic.search(params[:search]).where(addresses: {zip: params[:zip]})
+     @mechanics = Mechanic.search(params[:search])
     else
      @mechanics = Mechanic.all.order("created_at DESC")
     end
@@ -40,9 +38,8 @@ class MechanicsController < ApplicationController
   # POST /mechanics
   # POST /mechanics.json
   def create
-    
-    @mechanic = Mechanic.new(mechanic_params)
-    @user = User.new(user_params[:user])
+    @mechanic = Mechanic.new params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price)
+    @user = User.new params[:mechanic].require(:user).permit(:name, :email, :password, :password_confirmation)
     @user.role = :mechanic
 
     respond_to do |format|

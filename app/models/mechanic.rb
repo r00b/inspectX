@@ -6,7 +6,8 @@ class Mechanic < ActiveRecord::Base
   	self.approved = true
   end
 
-end
   def self.search(search)
-    where("name LIKE ? OR ingredients LIKE ? OR cooking_instructions LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+    where("speciality LIKE ? OR zip LIKE ?", "%#{search}%", "%#{search}%")
   end
+
+end

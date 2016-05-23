@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :users
   
   get 'users/:id/set_admin' => 'users#set_admin'
+
 end
