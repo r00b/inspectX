@@ -23,9 +23,14 @@
         <% @inspections = Inspection.where(user_id: current_user.id) %>
         <% @inspections.each do |job| %>
         <p><%= link_to inspection.inspection_title, inspection_path(inspection) %></p>
+        
         <% end %> 
+        <% if @inspections.empty? %>
+          You don't have any inspections yet.
+        <% end %>
         
     </div>
+     
   <div class="col-md-4">
     <h3>Start A New Inspection</h3>
     <p><a href="/mechanics/" class="scroll btn btn-coffee btn-border btn-large mt-20">Find A Mechanic</a>
@@ -36,6 +41,7 @@
     <div class="col-md-8 col-md-offset-2">
 
     </div>
+</div>
 </div>
 </div>
 <% else %>    

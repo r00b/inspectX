@@ -3530,4 +3530,63 @@ main {
 .owl-carousel {
  min-height:290px; 
 }
+.select2-selection__clear {
+  display:none;
+}
+body.content-page, 
+body.app-page {
+  padding-top:100px;
+}
+body.app-page footer,
+body.content-page footer {
+  position:relative;
+  margin-top:100px;
+}
+.mechanic-search {
+  border-bottom:1px solid #d8d8d8;
+}
+.mechanic-search p {
+  text-align:center;
+  font-size:12px;
+  margin-bottom:10px;
+}
+.mechanic-search #search {
+    padding: 10px;
+    width: 80%;
+    margin: 20px;
+}
+.mechanic-search input[type="submit"] {
+      padding: 10px 15px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #151515;
+    color: #151515;
+}
+.mechanic-overview {
+  border:1px solid #151515;
+  padding: 10px;
+  margin:10px 1.5%;
+  box-shadow:2px 2px 2px #c9c9c9;
+}
+.mechanic-overview:hover {
+  box-shadow:3px 3px 3px #a9a9a9;
+}
+.mechanic-price {
+font-size: 26px;
+    color: #151515;
+    text-align: right;
+    float: right;
+    padding-top: 10px;
+}
+.mechanic-brief-section {
+  clear:both;
+  margin-top:15px;
+  border-top:1px solid #d9d9d9;
+  padding-top:15px;
+}
+.mechanic-name {
+  text-transform:uppercase;
+  margin:10px 0;
+  text-align:left;
+  font-size:24px;
 }

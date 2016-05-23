@@ -23,7 +23,7 @@ class MechanicsController < ApplicationController
   # GET /mechanics/1
   # GET /mechanics/1.json
   def show
-    @mechanics = Mechanic.find(params[:id])
+    @mechanic = Mechanic.find(params[:id])
     #@inspections = @user.inspections
   end
 

@@ -1,32 +1,41 @@
+<body class="app-page"></body>
 <%= render 'layouts/app_navigation' %>
+<div class="container">
 
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-align:left">Mechanic Name</h2>
+      <div class="col-md-6">
+        <h2 class="text-align:left mechanic-name"><%= @mechanic.user.name %></h2>
+        <h4 class="text-left mechanic-zip"><%= @mechanic.zip %></h4>
+        <br>
+        <hr>
+        <br>
+        <span class="mechanic-company">Company: <%= @mechanic.company %></span>
+        <div class="mechanic-bio">
+          <span>About <%= @mechanic.user.name %></span>
+          <p><%= @mechanic.bio %></p>
+        </div>
+        <div class="mechanic-bio">
+          <span>Speciality 1: <%= @mechanic.speciality %></span>
+          
+        </div>
+        <div class="mechanic-bio">
+          <span>Speciality 2: <%= @mechanic.speciality %></span>
+          
+        </div>
       </div>
       <div class="col-md-6">
-        <div class="mechanic-speciality">
-          <span>Mechanic Speciality</span>
-        </div>
-        <div class=""
-      </div>
-      <div class="col-md-6">
-        <div class="mechanic-price">
-          <span>$100</span>
-        </div>
-        <div class="start-inspection">
-          <a href="/inspections/new" class="btn btn-primary btn-circle">Start Inspection</a>
-        </div>
-        <div class="mechanic-contact">
-          <span></span>
+        <span class="mechanic-profile-price">$<% @mechanic.price %></span>
+        <div class="mechanic-start-inspection">
+          <a href="/inspections/new" class="scroll btn btn-coffee btn-border btn-large mt-20">Start Inspection</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
+</div>  
 
 
 <%= render 'layouts/footer' %>
+</body>
