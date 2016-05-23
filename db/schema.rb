@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520214241) do
+ActiveRecord::Schema.define(version: 20160523151743) do
 
   create_table "inspections", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,9 +21,17 @@ ActiveRecord::Schema.define(version: 20160520214241) do
     t.string   "vehicle_model"
     t.date     "date"
     t.time     "time"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "mechanics_id"
+    t.string   "your_name"
+    t.string   "your_address"
+    t.string   "your_phone"
+    t.string   "your_email"
+    t.string   "seller_name"
+    t.string   "seller_address"
+    t.string   "seller_phone"
+    t.string   "seller_email"
   end
 
   add_index "inspections", ["mechanics_id"], name: "index_inspections_on_mechanics_id"
