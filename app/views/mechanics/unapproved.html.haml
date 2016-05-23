@@ -35,7 +35,10 @@
             %h4.text-left
               Speciality: #{mechanic.speciality}
             %h4.text-left
-              Approved: #{mechanic.approved ? "Yes" : "No"}
+              - if mechanic.approved == nil
+                Approved: Pending
+              - else
+                Approved: #{mechanic.approved ? "Yes" : "No"}
           .col-md-6
             %span.mechanic-price
             = link_to 'Show', mechanic

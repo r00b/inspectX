@@ -15,6 +15,7 @@ gem "cancan"
 gem "select2-rails"
 gem "andand"
 gem 'haml'
+gem 'puma'
 group :development, :test do
   gem 'byebug'
 end

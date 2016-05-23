@@ -43,6 +43,7 @@ class MechanicsController < ApplicationController
     @mechanic = Mechanic.new params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price)
     @user = User.new params[:mechanic].require(:user).permit(:name, :email, :password, :password_confirmation)
     @user.role = :mechanic
+    @mechanic.approved = nil
 
     respond_to do |format|
       if @user.save

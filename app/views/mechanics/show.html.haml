@@ -1,0 +1,31 @@
+%body.app-page
+= render 'layouts/app_navigation'
+.container
+  %section
+    .container
+      .row
+        .col-md-6
+          %h2.text-align:left.mechanic-name= @mechanic.user.name
+          %h4.text-left.mechanic-zip= @mechanic.zip
+          %br/
+          %hr/
+          %br/
+          %span.mechanic-company
+            Company: #{@mechanic.company}
+          .mechanic-bio
+            %span
+              About #{@mechanic.user.name}
+            %p= @mechanic.bio
+          .mechanic-bio
+            %span
+              Speciality 1: #{@mechanic.speciality}
+          .mechanic-bio
+            %span
+              Speciality 2: #{@mechanic.speciality}
+        .col-md-6
+          %span.mechanic-profile-price
+            $
+            - @mechanic.price
+          .mechanic-start-inspection
+            %a.scroll.btn.btn-coffee.btn-border.btn-large.mt-20{:href => new_mechanic_inspection_path(@mechanic)} Start Inspection
+= render 'layouts/footer'

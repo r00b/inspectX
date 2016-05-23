@@ -26,6 +26,7 @@ class InspectionsController < ApplicationController
 
   # GET /inspections/new
   def new
+    @mechanic   = Mechanic.find_by_id(params[:mechanic_id])
     @inspection = Inspection.new
   end
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :mechanic_searches
   resources :inspections
   resources :mechanics do
+    resources :inspections
     member do
       get 'approve'
     end
