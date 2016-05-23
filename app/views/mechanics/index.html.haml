@@ -1,0 +1,45 @@
+= render 'layouts/app_navigation'
+.container
+  %section
+    = form_tag(mechanics_path, :method => "get", id: "search-form") do
+      = text_field_tag :search, params[:search], placeholder: "Search Mechanics"
+      = submit_tag "Search", :name => nil
+  %section
+    - if @mechanics.empty?
+      There's no mechanics to show.
+    - @mechanics.each do |mechanic|
+      .row
+        .col-md-4.mechanic-overview
+          .col-md-6
+            %h3.text-center
+              Name: #{mechanic.user.present? ? mechanic.user.name : ""}
+            %h4.text-left
+              Email: #{mechanic.user.present? ? mechanic.user.email : ""}
+            %h4.text-left
+              Bio: #{mechanic.bio}
+            %h4.text-left
+              Kind: #{mechanic.kind}
+            %h4.text-left
+              Company: #{mechanic.company}
+            %h4.text-left
+              Address: #{mechanic.address}
+            %h4.text-left
+              City: #{mechanic.city}
+            %h4.text-left
+              State: #{mechanic.state}
+            %h4.text-left
+              Zip: #{mechanic.zip}
+            %h4.text-left
+              Speciality: #{mechanic.speciality}
+            %h4.text-left
+              - if mechanic.approved == nil
+                Approved: Pending
+              - else
+                Approved: #{mechanic.approved ? "Yes" : "No"}
+
+          .col-md-6
+            %span.mechanic-price
+            = link_to 'Show', mechanic
+            - if current_user.andand.admin?
+              = link_to('Approve', approve_mechanic_path(mechanic))
+              = link_to('Unapprove', unapprove_mechanic_path(mechanic))

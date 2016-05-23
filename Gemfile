@@ -14,6 +14,7 @@ gem "therubyracer"
 gem "cancan"
 gem "select2-rails"
 gem "andand"
+gem 'haml'
 group :development, :test do
   gem 'byebug'
 end
@@ -30,6 +31,9 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'jazz_hands',
+      :github => 'nixme/jazz_hands',
+      :branch => 'bring-your-own-debugger'
 end
 group :development, :test do
   gem 'better_errors'

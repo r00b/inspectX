@@ -10,11 +10,13 @@ class MechanicsController < ApplicationController
   # GET /mechanics
   # GET /mechanics.json
   def index
-    @mechanics = Mechanic.where approved: true
+    @mechanics1 = Mechanic.where(approved: true).order("created_at DESC")
+    @mechanics2 = Mechanic.where(approved: nil).order("created_at DESC")
+    @mechanics = @mechanics1 + @mechanics2
     if params[:search]
      @mechanics = Mechanic.search(params[:search])
     else
-     @mechanics = Mechanic.all.order("created_at DESC")
+     @mechanics = @mechanics
     end
   end
 
@@ -68,6 +70,7 @@ class MechanicsController < ApplicationController
         mechanics = mech
       end
     end
+  end
 
   # PATCH/PUT /mechanics/1
   # PATCH/PUT /mechanics/1.json
@@ -95,9 +98,22 @@ class MechanicsController < ApplicationController
 
   # GET /mechanics/1/approve
   def approve
-    #cancan authorization
+    @mechanic = Mechanic.find(params[:id])
+
     authorize! :all, @mechanic
-    @mechanic.approve
+    @mechanic.update(approved: true)
+    if @mechanic.save
+      redirect_to action: :index # notice: 'Mechanic was successfully approved.'
+    else
+      redirect_to render :unapproved, error: @mechanic.errors
+    end
+  end
+
+  def unapprove
+    @mechanic = Mechanic.find(params[:id])
+
+    authorize! :all, @mechanic
+    @mechanic.update(approved: false)
     if @mechanic.save
       redirect_to action: :unapproved # notice: 'Mechanic was successfully approved.'
     else
@@ -125,5 +141,4 @@ class MechanicsController < ApplicationController
     def user_params
       params.require(:mechanic).permit(user: [:name, :email, :password, :password_confirmation])
     end
-  end
 end
