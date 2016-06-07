@@ -1,13 +1,18 @@
+<body class="app-page"></body>
+<%= render 'layouts/app_navigation' %>
+<div class="container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Mechanic:</strong>
-  <%= @inspection.mechanic_id %>
+  <%= Mechanic.find(@inspection.mechanics_id).user.andand.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @inspection.user_id %>
+  <%= @inspection.your_name%>
+  <%= @inspection.user_id%>
 </p>
 
 <p>
@@ -52,3 +57,9 @@
 
 <%= link_to 'Edit', edit_inspection_path(@inspection) %> |
 <%= link_to 'Back', inspections_path %>
+
+</div>  
+
+
+<%= render 'layouts/footer' %>
+</body>

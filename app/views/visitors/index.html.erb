@@ -21,8 +21,8 @@
     <div class="col-md-8">
         <h3>Your Inspections</h3>
         <% @inspections = Inspection.where(user_id: current_user.id) %>
-        <% @inspections.each do |job| %>
-        <p><%= link_to inspection.inspection_title, inspection_path(inspection) %></p>
+        <% @inspections.each do |inspection| %>
+          <p><%= link_to inspection.created_at, inspection_path(inspection) %></p>
         
         <% end %> 
         <% if @inspections.empty? %>

@@ -5,8 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(name: 'Admin', email: 'admin@gmail.com', password: '123456', password_confirmation: '123456')
+User.create(name: 'Admin', email: 'admin@gmail.com', password: '123456', password_confirmation: '123456', role: 2)
 
+mechanic = User.create(name: 'John Johnes', email: 'john@gmail.com', password: '123456', password_confirmation: '123456', role: 1)
+Mechanic.create(
+    bio: "Striving for Accura", 
+    speciality: 'test data',
+    company: 'test company',
+    address: 'test address',
+    city: 'test city',
+    state: 'test state',
+    zip: '111222',
+    price: 100,
+    approved: true,
+    user_id: mechanic.id
+    )
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
 #
