@@ -1,0 +1,70 @@
+= render 'layouts/app_navigation'
+%section
+  .container
+    = simple_form_for [@mechanic, @inspection] do |f|
+      .row
+        .col-md-12
+          = f.error_notification
+      .row
+        .col-md-12
+          %h3.text-left Mechanic Info
+          .col-md-3
+            %h4
+              = 'NAME:'
+              = @mechanic.andand.user.andand.name
+          .col-md-3
+            %h4
+              = 'SPECIALITY:'
+              = @mechanic.speciality
+          .col-md-3
+            %h4
+              = 'ZIP:'
+              = @mechanic.zip
+          .col-md-3
+            %h4
+              = 'PRICE:'
+              = @mechanic.price
+      .row
+        .col-md-6
+          %h3.text-left Buyer Info
+          .form-inputs
+            = f.input :your_name
+            = f.input :your_address
+            = f.input :your_phone
+            = f.input :your_email
+        .col-md-6
+          %h3.text-left Vehicle Info
+          .form-inputs
+            %span Vehicle Year
+            = f.input :vehicle_year,  as: :select_picker, collection: [*1960..2016]
+            %span Vehicle Make
+            = f.input :vehicle_make,  as: :select_picker, collection: Edmunds::Make.new.find_all.map { |user| user['name'] }
+            %span Vehicle Model
+            - vehicle_models = []
+            - Edmunds::Make.new.find_all.map do |auto|
+              - auto['models'].map do |model|
+                - vehicle_models << model['name']
+            = f.input :vehicle_model, as: :select_picker, collection: vehicle_models
+      .row
+        .col-md-6
+          %h3.text-left Inspection Info
+          .form-inputs
+            = f.input :seller_name
+            = f.input :seller_address
+            = f.input :seller_phone
+            = f.input :seller_email
+            = f.input :location
+            = f.input :date
+            = f.input :time
+        .col-md-6
+          %h3.text-left Payment
+          .form-inputs
+            %span Mechanic Rate
+            %span Button for confirm and pay
+            = f.input :card_number, label: 'Card Number', input_html: { placeholder: 'Card Number' }
+            = f.input :card_cvv, as: :password, label: 'CVV Number', input_html: { placeholder: 'CVV' }
+            = f.input :card_month,  as: :select, collection: [*1..12].map { |n| n.to_s.rjust(2, '0') }, prompt: 'Month'
+            = f.input :card_year,  as: :select, collection: [*Date.today.year..Date.today.year + 7], prompt: 'Year'
+            
+            .form-actions
+              = f.button :submit, 'Charge'

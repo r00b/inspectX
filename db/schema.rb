@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523151743) do
+ActiveRecord::Schema.define(version: 20160607152633) do
 
   create_table "inspections", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160523151743) do
     t.time     "time"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "mechanics_id"
+    t.integer  "mechanic_id"
     t.string   "your_name"
     t.string   "your_address"
     t.string   "your_phone"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 20160523151743) do
     t.string   "seller_address"
     t.string   "seller_phone"
     t.string   "seller_email"
+    t.string   "braintree_id"
   end
 
-  add_index "inspections", ["mechanics_id"], name: "index_inspections_on_mechanics_id"
+  add_index "inspections", ["mechanic_id"], name: "index_inspections_on_mechanic_id"
 
   create_table "mechanic_searches", force: :cascade do |t|
     t.integer  "user_id"

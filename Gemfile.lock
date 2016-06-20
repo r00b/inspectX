@@ -69,6 +69,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    braintree (2.62.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (8.2.5)
     cancan (1.6.10)
@@ -95,6 +97,9 @@ GEM
       unicode_utils (~> 1.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    credit_card_validations (3.2.1)
+      activemodel (>= 3, < 5)
+      activesupport (>= 3, < 5)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.1.0)
@@ -105,10 +110,16 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     diffy (3.1.0)
+    dotenv (2.1.1)
+    dotenv-rails (2.1.1)
+      dotenv (= 2.1.1)
+      railties (>= 4.0, < 5.1)
     edmunds_ruby (1.0.2)
       crack
       rails
       rest-client
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.7.0)
@@ -308,13 +319,17 @@ DEPENDENCIES
   andand
   better_errors
   bootstrap-sass
+  braintree
   byebug
   cancan
   capybara
   coffee-rails (~> 4.1.0)
+  credit_card_validations
   database_cleaner
   devise
+  dotenv-rails
   edmunds_ruby
+  email_validator
   factory_girl_rails
   faker
   haml
@@ -343,9 +358,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   underscore-rails
   web-console (~> 2.0)
-
-RUBY VERSION
-   ruby 2.2.2p95
 
 BUNDLED WITH
    1.12.4

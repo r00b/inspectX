@@ -16,10 +16,15 @@ gem "select2-rails"
 gem "andand"
 gem 'haml'
 gem 'puma'
+gem 'braintree'
+gem 'email_validator'
+gem 'credit_card_validations'
+
 group :development, :test do
   gem 'byebug'
 end
 group :development do
+  gem 'dotenv-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
