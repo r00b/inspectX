@@ -19,6 +19,7 @@ gem 'puma'
 gem 'braintree'
 gem 'email_validator'
 gem 'credit_card_validations'
+gem "bower-rails", "~> 0.10.0"
 
 group :development, :test do
   gem 'byebug'
