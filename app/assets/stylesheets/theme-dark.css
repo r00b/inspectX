@@ -29,7 +29,6 @@ body ::selection {
 }
 .service-item:hover {
   border-color: #171724;
-i
 }
 .filter li a:hover {
   border-bottom: 1px solid #171724;
