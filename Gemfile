@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'non-stupid-digest-assets'
 
 group :development do
   gem 'dotenv-rails'
