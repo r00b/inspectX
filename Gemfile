@@ -19,22 +19,16 @@ gem 'puma'
 gem 'braintree'
 gem 'email_validator'
 gem 'credit_card_validations'
-gem "bower-rails", "~> 0.10.0"
-
-group :development, :test do
-  gem 'byebug'
-end
-group :development do
-  gem 'dotenv-rails'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
+gem 'bower-rails', '~> 0.10.0'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
-#gem 'therubyracer', :platform=>:ruby
+
 group :development do
+  gem 'dotenv-rails'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
@@ -42,17 +36,22 @@ group :development do
       :github => 'nixme/jazz_hands',
       :branch => 'bring-your-own-debugger'
 end
+
 group :development, :test do
   gem 'better_errors'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'byebug'
 end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'rollbar'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
