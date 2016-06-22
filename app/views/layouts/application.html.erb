@@ -6,17 +6,12 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "inspectX" %>">
     
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    
     <%= javascript_include_tag 'application' %>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-
     <%= csrf_meta_tags %>
   </head>
 
 
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
 
 </html>
