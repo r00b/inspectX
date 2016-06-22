@@ -38,6 +38,8 @@
 # joe`s backups
 *~
 
+/db/development.sqlite3
+
 # Uploaded Files && Compiled Assets
 /public/assets/
 /public/uploads/
