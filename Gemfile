@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'non-stupid-digest-assets'
 
 group :development do
+  gem 'letter_opener'
   gem 'dotenv-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
