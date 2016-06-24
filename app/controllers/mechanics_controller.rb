@@ -40,7 +40,7 @@ class MechanicsController < ApplicationController
   # POST /mechanics
   # POST /mechanics.json
   def create
-    @mechanic = Mechanic.new params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price)
+    @mechanic = Mechanic.new params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price, :picture)
     @user = User.new params[:mechanic].require(:user).permit(:name, :email, :password, :password_confirmation)
     @user.role = :mechanic
     @mechanic.approved = nil
@@ -136,7 +136,7 @@ class MechanicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mechanic_params
-      params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price)
+      params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price, :picture)
     end
 
     def user_params

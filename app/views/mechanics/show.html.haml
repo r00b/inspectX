@@ -5,6 +5,7 @@
     .container
       .row
         .col-md-6
+          = image_tag @mechanic.picture.url(:thumb) if @mechanic.picture.present?
           %h2.text-align:left.mechanic-name= @mechanic.user.name
           %h4.text-left.mechanic-zip= @mechanic.zip
           %br/
