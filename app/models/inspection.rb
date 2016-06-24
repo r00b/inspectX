@@ -24,8 +24,16 @@ class Inspection < ActiveRecord::Base
   validates :card_cvv, presence: true, numericality: true, length: { minimum: 3, maximum: 4 }
 
   after_validation :set_card_number_errors
+  after_create :send_letter
 
   private 
+
+  def send_letter
+    InspectionMailer.send_inspection_to_user(self).deliver
+    InspectionMailer.send_inspection_to_admin(self).deliver
+  end
+
+  handle_asynchronously :send_letter
 
   def set_card_number_errors
     errors.add(:card_number, "Card year #{errors[:card_year].first}") if errors[:card_year].any?

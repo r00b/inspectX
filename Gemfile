@@ -26,6 +26,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'non-stupid-digest-assets'
+gem 'delayed_job_active_record'
 
 group :development do
   gem 'letter_opener'
