@@ -94,6 +94,9 @@ hr {
 /* ==============================
    Helper clases
    ============================== */
+.row {
+  padding: 15px 0;
+}
 .clearlist,
 .clearlist li {
   list-style: none;
