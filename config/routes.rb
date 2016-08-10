@@ -1,26 +1,15 @@
 Rails.application.routes.draw do
+  resources :approve_mechanics, only: [:index, :update, :destroy]
   resources :mechanic_profiles
   resources :mechanic_searches
   resources :inspections
   resources :mechanics do
     resources :inspections
-    member do
-      get 'approve'
-    end
-    member do
-      get 'unapprove'
-    end
-    collection do
-      get 'unapproved'
-    end
   end
   root to: 'visitors#index'
   devise_for :users
-  # devise_for :users, controllers: {
-  #       sessions: 'users/sessions'
-  #     }
-  resources :users
-  
+  resources :users, only: [:index, :show, :update]
+
   get 'users/:id/set_admin' => 'users#set_admin'
 
 end

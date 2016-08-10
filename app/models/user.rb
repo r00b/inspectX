@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :inspections
-  has_one :mechanic
+  has_one :mechanic, dependent: :destroy
   enum roles: [:customer, :mechanic, :admin]
 
   def has_role?(role)
@@ -11,9 +11,13 @@ class User < ActiveRecord::Base
     has_role?(:admin)
   end
 
+  def mechanic?
+    has_role?(:mechanic)
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, 
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          #:confirmable,
 
