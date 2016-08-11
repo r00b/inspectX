@@ -13,7 +13,7 @@ class InspectionsController < ApplicationController
   def show
     @inspections = Inspection.find(params[:id])
   end
-  
+
   # GET /inspections/new
   def new
     @inspection = Inspection.new
@@ -27,8 +27,9 @@ class InspectionsController < ApplicationController
   # POST /inspections.json
   def create
     @inspection = current_user.inspections.new(inspection_params)
+    @inspection.time = @inspection.corrected_time
     @inspection.mechanic = @mechanic
-    
+
     respond_to do |format|
       if @inspection.valid?
         @btransaction = Braintree::Transaction.sale(amount: @inspection.mechanic.price,
@@ -42,14 +43,14 @@ class InspectionsController < ApplicationController
                                                     options: { submit_for_settlement: true })
 
         if @btransaction.success?
-            @inspection.braintree_id = @btransaction.transaction.id          
+            @inspection.braintree_id = @btransaction.transaction.id
             @inspection.save
 
             format.html { redirect_to @inspection, notice: 'Inspection was successfully scheduled.' }
             format.json { render :show, status: :created, location: @inspection }
         else
           @inspection.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
-          
+
           format.html { render :new }
           format.json { render json: @inspection.errors, status: :unprocessable_entity }
         end
@@ -59,7 +60,7 @@ class InspectionsController < ApplicationController
       end
     end
   end
-  
+
   # PATCH/PUT /inspections/1
   # PATCH/PUT /inspections/1.json
   def update
@@ -96,11 +97,11 @@ class InspectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspection_params
-      params.require(:inspection).permit(:mechanic_id, 
-      :user_id, :location, :vehicle_year, 
-      :vehicle_make, :vehicle_model, :date, :time, :created_at, :updated_at,
-      :your_name, :your_address, :your_phone, :your_email,
-      :seller_name, :seller_address, :seller_phone, :seller_email, :mechanic_id, :user_id, 
-      :card_number, :card_year, :card_month, :card_cvv)
+      params.require(:inspection).permit(:mechanic_id,
+        :user_id, :location, :vehicle_year,
+        :vehicle_make, :vehicle_model, :date, :time, :created_at, :updated_at,
+        :your_name, :your_address, :your_phone, :your_email,
+        :seller_name, :seller_address, :seller_phone, :seller_email, :mechanic_id, :user_id,
+        :card_number, :card_year, :card_month, :card_cvv)
     end
 end
