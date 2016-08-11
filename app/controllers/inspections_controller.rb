@@ -1,4 +1,5 @@
 class InspectionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_inspection, only: [:show, :edit, :update, :destroy]
   before_action :set_mechanic, only: [:new, :create]
 
