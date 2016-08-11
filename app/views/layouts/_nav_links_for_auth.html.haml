@@ -1,0 +1,11 @@
+- if user_signed_in?
+  - if current_user.try(:admin?)
+    %li= link_to 'Manage Users', users_path
+    %li= link_to 'Manage Mechanics', approve_mechanics_path
+  - if current_user.try(:mechanic?)
+    %li= link_to 'Edit Mechanic Info', edit_mechanic_path(current_user.try(:mechanic))
+  %li= link_to 'Edit account', edit_user_registration_path
+  %li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+- else
+  %li= link_to 'Sign in', new_user_session_path , class: "btn  btn-user"
+  %li= link_to 'Sign up', new_user_registration_path , class: "btn  btn-user"

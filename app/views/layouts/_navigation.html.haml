@@ -1,0 +1,26 @@
+/ Navigation panel
+%nav.main-nav.white.transparent.stick-fixed.js-transparent
+  .full-wrapper.relative.clearfix
+    / Logo
+    .nav-logo-wrap
+      %a.logo{href: "/"} INSPECTX
+    .navbar-mobile
+      %i.fa.fa-bars
+    / Main Menu
+    .inner-nav.navbar-desktop
+      %ul.clearlist.scroll.scroll-nav{style: "max-height:806px;"}
+        %li.active
+          %a{href: "#home"} Home
+        / End Item With Sub
+        %li
+          %a{href: "#about"} About
+        %li
+          %a{href: "#howitworks"} How It Works
+        %li
+          %a{href: "#mechanic"} Find A Mechanic
+        %li
+          %a{href: "#contacts"} Contacts
+        %li
+          %a  
+        / <li><a href="#"><i class="fa fa-phone"></i> 12-233-325-515</a></li>
+        %li= render 'layouts/nav_links_for_auth'

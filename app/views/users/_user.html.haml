@@ -1,0 +1,9 @@
+- unless user == current_user
+  %td
+    = link_to user.email, user
+  %td
+    = simple_form_for(user) do |f|
+      = f.input :role, collection: User.roles.keys, selected: User.roles.key(user.role), include_blank: false, label: false
+      = f.submit 'Update Role', class: 'button-xs'
+  %td
+    = link_to('Delete user', user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: 'button-xs')

@@ -1,0 +1,25 @@
+%body.app-page
+  = render 'layouts/app_navigation'
+.container
+  .row
+    %h3 Approve Mechanics
+    %table.table.table-striped
+      %tbody
+        %tr
+          %th Mechanic Email
+          %th Approve
+        - @unapproved_mechanics.each do |mechanic|
+          %tr
+            %td= link_to mechanic.user.email, mechanic_path(mechanic)
+            %td= link_to 'Approve', approve_mechanic_path(mechanic), method: :put
+  .row
+    %h3 Unapprove Mechanics
+    %table.table.table-striped
+      %tbody
+        %tr
+          %th Mechanic Email
+          %th Unapprove
+        - @approved_mechanics.each do |mechanic|
+          %tr
+            %td= link_to mechanic.user.email, mechanic_path(mechanic)
+            %td= link_to 'Unapprove', "approve_mechanics/#{mechanic.id}", method: :delete

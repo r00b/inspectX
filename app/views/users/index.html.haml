@@ -1,0 +1,14 @@
+%body.app-page
+  = render 'layouts/app_navigation'
+.container
+  .row
+    %h3 Manage Users
+    %table.table.table-striped
+      %tbody
+        %tr
+          %th User email
+          %th Role
+          %th Delete
+        - @users.each do |user|
+          %tr
+            = render user

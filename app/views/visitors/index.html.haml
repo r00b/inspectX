@@ -1,0 +1,124 @@
+%body#home.appear-animate
+  / Page Loader Start
+  .page-loader
+    .loader Loading
+    %span.loader-text.alt-font InspectX
+  #top
+  - if user_signed_in?
+    = render 'layouts/app_navigation'
+    %br
+    %br
+    .container
+      .row
+        .col-md-12
+          %h1.text-center Welcome Back
+        %hr
+        %br
+      .row
+        .col-md-8
+          %h3 Your Inspections
+          - @inspections = Inspection.where(user_id: current_user.id)
+          - @inspections.each do |inspection|
+            %p= link_to inspection.created_at, inspection_path(inspection)
+          - if @inspections.empty?
+            You don't have any inspections yet.
+        .col-md-4
+          %h3 Start A New Inspection
+          %p
+            %a.scroll.btn.btn-coffee.btn-border.btn-large.mt-20{href: "/mechanics/"} Find A Mechanic
+        %hr/
+        %br/
+        .row
+          .col-md-8.col-md-offset-2
+  - else
+    = render 'layouts/navigation'
+    %section#hero.full-screen
+      / Parallax image
+      .parallax.parallax-hero.full-screen.bg-dark-50{"data-anchor-target" => "#hero", "data-background" => "#{asset_path('home-banner.jpg')}", "data-top" => "transform: translate3d(0px, 0px, 0px)", "data-top-bottom" => "transform: translate3d(0px, -200px, 0px)"}
+      .hero-content
+        .hero-content-inner
+          %h1.hs-line-8.wow.fadeInDown{"data-wow-delay" => "0.5s", "data-wow-duration" => "3s"} Pre-Purchase Inspections. Re-Imagined.
+          .hs-line-9.wow.fadeInDown{"data-wow-delay" => "0.5s", "data-wow-duration" => "3s"} Vehicle Inspections for the 21st century.
+          %a.scroll.btn.btn-coffee.btn-color-w.btn-circle.btn-medium.mb-xxs-40.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "3s", href: "#pricing"} Get started
+          %span    
+          %a.scroll.btn.btn-coffee.btn-border-w.btn-circle.btn-medium.magnific.mfp-iframe.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "3s", href: "http://youtu.be/i1T0-SROLe0"}
+            %i.fa.fa-play-circle-o
+            Watch video
+      %a.btn-scroll-down.scroll{"data-100-start" => "display: none", "data-start" => "display: block", href: "#page"}
+    #page.page
+      / Start section about
+      %section#about
+        .container.pb-40
+          .row
+            .col-md-8.col-md-offset-2.text-center.wow.fadeInUp{"data-wow-delay" => "0.1s", "data-wow-duration" => "1s"}
+              %blockquote.service-quote
+                %p Hire an expert mechanic for a mobile pre-purchase inspection. Experience inspectX-certified peace of mind.
+          .row
+            .col-sm-4
+              .features-item.text-center
+                .features-icon
+                  .icon-speedometer
+                %h3.features-title.alt-font Fast
+            .col-sm-4
+              .features-item.text-center
+                .features-icon
+                  .icon-recycle
+                %h3.features-title.alt-font Simple to use
+            .col-sm-4
+              .features-item.text-center
+                .features-icon
+                  .icon-heart
+                %h3.features-title.alt-font Users love us
+        #howitworks.bg-light.pt-40.pb-40.mt-80
+          .container
+            .row
+              .col-md-7.wow.fadeIn{"data-wow-delay" => "0.1s", "data-wow-duration" => "1s"}
+                %img.resp{alt: "", src: "#{asset_path('about.jpg')}"}
+              .col-md-5.col-lg-4.col-lg-offset-1
+                %h3.alt-font How It Works
+                %p inspectX mechanics travel to your vehicle's location to complete a detailed, 180-point inspection. All mechanics are brand-certified and have brand-specific experience--you get a shop-quality inspection with the convenience of a mobile mechanic.
+                .mt-40
+                  %a.btn.btn-coffee.btn-color.btn-round.btn-medium{href: "#"} Learn more
+        %hr
+        #mechanic.pt-40.pb-40
+          .container
+            .row
+              .col-md-7.col-sm-10.col-sm-offset-2.visible-sm.visible-xs
+                %img.resp{alt: "", src: ""}
+              .col-md-5.col-lg-4.col-lg-offset-1
+                %h3.alt-font Find A Mechanic
+                %p Search a ZIP and a vehicle make, choose your favorite mechanic, and schedule an appointment. Getting an expert mechanic's opinion has never been easier.
+                .mt-40
+                  %a.btn.btn-coffee.btn-round.btn-color.btn-medium.magnific.mfp-iframe{href: "https://vimeo.com/79876010"} Get Started
+              .col-md-5.col-md-offset-1.hidden-sm.hidden-xs.wow.fadeIn{"data-wow-delay" => "0.1s", "data-wow-duration" => "1s"}
+                %img.resp{alt: "", src: "#{asset_path('mechanic2.jpg')}"}/
+        .small-section.bg-light.call-to-action.pb-60
+          .container
+            .row
+              .col-sm-7
+                %h4.alt-font Want To Register As A Mechanic
+                %h5 Register as a mechanic today! Start making money helping potential car buyers get the best vehicle with our pre-purchase inspections.
+              .col-sm-5.text-center= link_to 'Get Started', new_mechanic_path, class: "scroll btn btn-coffee btn-border btn-large mt-20"
+      %section#contacts.pt-0
+        .container
+          .row
+            .col-md-12.text-center.mt-60.mt-xs-30
+              %h3
+                %b Contacts
+          .row.mt-20
+            .col-md-8.col-md-offset-2.text-center
+          .row.mt-60.mt-xs-30
+            .col-md-8.col-md-offset-2.text-center
+              .col-sm-4.contact-item
+                %span.icon-phone
+                %p (002) 123 4511
+              .col-sm-4.contact-item
+                %span.icon-map-pin
+                %p
+                  245 Park Street, Charlotte,
+                  %br>
+                  NC 123456, USA
+              .col-sm-4.contact-item
+                %span.icon-envelope
+                %a{href: "mailto:support@ideasweb.com", target: "_blank"} support@ideasweb.com
+      = render 'layouts/footer'
