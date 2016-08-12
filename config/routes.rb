@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get 'users/:id/set_admin' => 'users#set_admin'
 
+  resources :models, only: :index
 end

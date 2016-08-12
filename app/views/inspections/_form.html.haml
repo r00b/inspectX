@@ -65,6 +65,6 @@
             = f.input :card_cvv, as: :password, label: 'CVV Number', input_html: { placeholder: 'CVV' }
             = f.input :card_month,  as: :select, collection: [*1..12].map { |n| n.to_s.rjust(2, '0') }, prompt: 'Month'
             = f.input :card_year,  as: :select, collection: [*Date.today.year..Date.today.year + 7], prompt: 'Year'
-            
+
             .form-actions
               = f.button :submit, 'Charge'
