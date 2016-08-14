@@ -1,0 +1,34 @@
+%p#notice= notice
+%h1 Listing Inspections
+%table
+  %thead
+    %tr
+      %th Mechanic
+      %th User
+      %th Location
+      %th Vehicle year
+      %th Vehicle make
+      %th Vehicle model
+      %th Date
+      %th Time
+      %th Created at
+      %th Updated at
+      %th{colspan: "3"}
+  %tbody
+    - @inspections.each do |inspection|
+      %tr
+        %td= inspection.mechanic_id
+        %td= inspection.user_id
+        %td= inspection.location
+        %td= inspection.vehicle_year
+        %td= inspection.vehicle_make
+        %td= inspection.vehicle_model
+        %td= inspection.date
+        %td= inspection.time
+        %td= inspection.created_at
+        %td= inspection.updated_at
+        %td= link_to 'Show', inspection
+        %td= link_to 'Edit', edit_inspection_path(inspection)
+        %td= link_to 'Destroy', inspection, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Inspection', new_inspection_path

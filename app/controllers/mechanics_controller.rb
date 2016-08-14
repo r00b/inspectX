@@ -1,6 +1,6 @@
  class MechanicsController < ApplicationController
   #devise authorization
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   before_action :set_mechanic, only: [:show, :edit, :update, :destroy]
 

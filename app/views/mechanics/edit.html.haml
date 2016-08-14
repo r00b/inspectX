@@ -1,0 +1,21 @@
+%body.app-page
+= render 'layouts/app_navigation'
+.container
+  %h1 Editing Mechanic
+  = simple_form_for @mechanic do |f|
+    = f.error_notification
+    .form-inputs.col-md-6
+      = f.input :picture
+      = f.input :bio, label: 'Short Description'
+      = f.input :company, label: 'Your Company'
+      = f.input :address, label: 'Your Address'
+      = f.input :city
+      = f.input :state
+      = f.input :zip
+      = f.input :speciality,  as: :select_picker, collection: Edmunds::Make.new.find_all.map { |user| user['name'] }, label: 'Vehicle Make Speciality'
+      = f.input :price, label: 'Your Inspection Price'
+      .form-actions
+        = f.button :submit, 'Update', class: 'btn btn-primary'
+      = link_to 'Show', @mechanic
+      |
+      = link_to 'Back', mechanics_path

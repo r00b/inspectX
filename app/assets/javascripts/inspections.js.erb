@@ -1,0 +1,30 @@
+$( document ).ready(function() {
+    $('#inspection_vehicle_make').change(function(){
+      $option = $( "#inspection_vehicle_make option:selected" ).text();
+      $.ajax({
+           url: "<%= '/models' %>",
+          type: "GET",
+      dataType: "json",
+          data: { make_name: $option },
+       success: function(data, models, xhr) {
+                  $models = data.models;
+
+                  $('#inspection_vehicle_model') //remove old list of models
+                    .find('option')
+                    .remove()
+                    .end();
+
+                  $.each($models, function (i, item) { // add make specific models
+                      if (i == 0) {
+                        $('#inspection_vehicle_model').append($('<option selected="selected">', {
+                            value: item, text : item
+                        }));
+                      }
+                      $('#inspection_vehicle_model').append($('<option>', {
+                          value: item, text : item
+                      }));
+                  });
+                }
+      });
+    });
+});

@@ -26,7 +26,11 @@ class Inspection < ActiveRecord::Base
   after_validation :set_card_number_errors
   after_create :send_letter
 
-  private 
+  def corrected_time
+    time.change(year: date.year, month: date.month, day: date.day)
+  end
+
+  private
 
   def send_letter
     InspectionMailer.send_inspection_to_user(self).deliver

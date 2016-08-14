@@ -1,0 +1,39 @@
+%body.app-page
+= render 'layouts/app_navigation'
+.container
+  %p#notice= notice
+  %p
+    %strong Mechanic:
+    = Mechanic.find(@inspection.mechanic_id).user.andand.name
+  %p
+    %strong User:
+    = @inspection.your_name
+    = @inspection.user_id
+  %p
+    %strong Location:
+    = @inspection.location
+  %p
+    %strong Vehicle year:
+    = @inspection.vehicle_year
+  %p
+    %strong Vehicle make:
+    = @inspection.vehicle_make
+  %p
+    %strong Vehicle model:
+    = @inspection.vehicle_model
+  %p
+    %strong Date:
+    = @inspection.date
+  %p
+    %strong Time:
+    = @inspection.time
+  %p
+    %strong Created at:
+    = @inspection.created_at
+  %p
+    %strong Updated at:
+    = @inspection.updated_at
+  = link_to 'Edit', edit_inspection_path(@inspection)
+  |
+  = link_to 'Back', inspections_path
+= render 'layouts/footer'

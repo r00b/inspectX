@@ -1,0 +1,21 @@
+= simple_form_for @mechanic do |f|
+  = f.simple_fields_for :user, @user do |u|
+    = u.error_notification
+    .form-inputs.col-md-6
+      = u.input :name, label: 'Your Name'
+      = u.input :email, label: 'Your Email'
+      = u.input :password
+      = u.input :password_confirmation
+  = f.error_notification
+  .form-inputs.col-md-6
+    = f.input :picture
+    = f.input :bio, label: 'Short Description'
+    = f.input :company, label: 'Your Company'
+    = f.input :address, label: 'Your Address'
+    = f.input :city
+    = f.input :state
+    = f.input :zip
+    = f.input :speciality,  as: :select_picker, collection: Edmunds::Make.new.find_all.map { |user| user['name'] }, label: 'Vehicle Make Speciality'
+    = f.input :price, label: 'Your Inspection Price'
+  .form-actions
+    = f.button :submit, 'Register'

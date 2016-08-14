@@ -1,0 +1,29 @@
+%body.app-page
+= render 'layouts/app_navigation'
+.container
+  %section.mechanic-search
+    %p You can search for a mechanic either by their Zip code or by their vehicle speciality
+    = form_tag(mechanics_path, method: "get", id: "search-form") do
+      = text_field_tag :search, params[:search], placeholder: "Search Mechanics"
+      = submit_tag "Search", name: nil
+  %section
+    %h1.text-center.mechanic-page-title All Mechanics
+    - if @mechanics.empty?
+      There's no mechanics to show.
+    - @mechanics.each do |mechanic|
+      .row
+        .col-md-4.mechanic-overview
+          .col-md-8
+            = link_to 'View Mechanic', mechanic, class: "scroll btn btn-coffee btn-border btn-large mt-20 text-center"
+          .col-md-4
+            %span.mechanic-price
+              $#{mechanic.price}
+          .col-md-12.mechanic-brief-section
+            %span.mechanic-name= mechanic.user.present? ? mechanic.user.name : ""
+            %h4.text-left
+              Company: #{mechanic.company}
+            %h4.text-left
+              Zip: #{mechanic.zip}
+            %h4.text-left
+              Speciality: #{mechanic.speciality}
+= render 'layouts/footer'
