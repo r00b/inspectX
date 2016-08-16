@@ -6,4 +6,4 @@
       = f.input :role, collection: User.roles.keys, selected: User.roles.key(user.role), include_blank: false, label: false
       = f.submit 'Update Role', class: 'button-xs'
   %td
-    = link_to('Delete user', user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: 'button-xs')
+    = link_to('Delete user', user, data: { confirm: "Are you sure?" }, method: :delete, class: 'button-xs')

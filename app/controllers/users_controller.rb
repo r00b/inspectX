@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin!, only: :index
 
-  before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   def index
     @users = User.all
@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     else
       redirect_to users_path, alert: "Unable to update user."
     end
+  end
+
+  def destroy
+    @user.destroy
+
+    redirect_to :back
   end
 
   private
