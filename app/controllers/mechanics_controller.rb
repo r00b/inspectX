@@ -102,7 +102,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mechanic_params
-      params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :price, :picture)
+      params.require(:mechanic).permit(:bio, :kind, :company, :address, :city, :state, :zip, :speciality, :second_speciality, :price, :picture)
     end
 
     def user_params

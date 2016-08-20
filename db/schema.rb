@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624035007) do
+ActiveRecord::Schema.define(version: 20160820135818) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160624035007) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "second_speciality"
   end
 
   add_index "mechanics", ["user_id"], name: "index_mechanics_on_user_id"
