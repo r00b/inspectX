@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   root to: 'visitors#index'
   devise_for :users
-  resources :users, only: [:index, :show, :update, :destroy]
+  resources :users, except: [:new, :create]
 
   get 'users/:id/set_admin' => 'users#set_admin'
 

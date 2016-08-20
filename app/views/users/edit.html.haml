@@ -1,0 +1,13 @@
+%body.app-page
+= render 'layouts/app_navigation'
+.container
+  %h1 Editing User
+  = simple_form_for @user do |f|
+    = f.error_notification
+    .form-inputs.col-md-6
+      = f.input :name
+      = f.input :email
+      = f.input :role, collection: User.roles.keys, selected: User.roles.key(@user.role), include_blank: false, label: false
+
+      .form-actions
+        = f.button :submit, 'Update', class: 'btn btn-primary'
