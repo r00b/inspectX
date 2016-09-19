@@ -3,6 +3,6 @@ class BaseMailer < ActionMailer::Base
   layout 'mailer'
 
   def admin
-    'shawn@series5technology.com'
+    'frank@inspect-x.com'
   end
 end
