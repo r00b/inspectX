@@ -1,5 +1,5 @@
 class BaseMailer < ActionMailer::Base
-  default from: 'shawn@series5technology.com'
+  default from: 'noreply@inspect-x.com'
   layout 'mailer'
 
   def admin
