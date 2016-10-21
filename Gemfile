@@ -28,6 +28,7 @@ gem 'non-stupid-digest-assets'
 gem 'delayed_job_active_record'
 gem 'paperclip', '~> 5.0.0.beta1'
 gem 'aws-sdk', '~> 2'
+gem 'rb-readline', '~> 0.4.2'
 
 group :development do
   gem 'letter_opener'
