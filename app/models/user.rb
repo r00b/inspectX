@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
   def admin?
     has_role?(:admin)
+    # true
+  end
+
+  def role?
+    self.role
   end
 
   def mechanic?
