@@ -6,7 +6,7 @@ class Inspection < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :mechanic_id, presence: true
-  validates :location, presence: true
+  # validates :location, presence: true
   validates :vehicle_year, presence: true
   validates :vehicle_make, presence: true
   validates :vehicle_model, presence: true
