@@ -28,7 +28,7 @@ class InspectionsController < ApplicationController
   # POST /inspections.json
   def create
     @inspection = current_user.inspections.new(inspection_params)
-    @inspection.time = @inspection.corrected_time
+    # @inspection.time = @inspection.corrected_time
     @inspection.mechanic = @mechanic
 
     respond_to do |format|
