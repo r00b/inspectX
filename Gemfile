@@ -16,7 +16,7 @@ gem 'select2-rails'
 gem 'andand'
 gem 'haml'
 gem 'puma'
-gem 'braintree'
+gem "braintree", "~> 2.68.2"
 gem 'email_validator'
 gem 'credit_card_validations'
 gem 'bower-rails', '~> 0.10.0'

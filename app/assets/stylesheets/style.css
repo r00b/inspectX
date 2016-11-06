@@ -1897,7 +1897,7 @@ span.hs {
    Hero section
    ============================== */
 #hero {
-  
+
 }
 .hero-content {
   position: absolute;
@@ -3512,12 +3512,12 @@ span.icon-close {
 a:link.btn-user,
 a:visited.btn-user{
   border:none;
-  
+
 }
 a:hover.btn-user {
   background:transparent!important;
   font-weight:bold;
-  
+
 }
 
 main {
@@ -3531,12 +3531,12 @@ main {
   background:#a8a8a8!important;
 }
 .owl-carousel {
- min-height:290px; 
+ min-height:290px;
 }
 .select2-selection__clear {
   display:none;
 }
-body.content-page, 
+body.content-page,
 body.app-page {
   padding-top:100px;
 }

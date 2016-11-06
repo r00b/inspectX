@@ -76,7 +76,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     bower-rails (0.10.0)
-    braintree (2.62.0)
+    braintree (2.68.2)
       builder (>= 2.0.0)
     builder (3.2.2)
     byebug (8.2.5)
@@ -360,7 +360,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bower-rails (~> 0.10.0)
-  braintree
+  braintree (~> 2.68.2)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -410,4 +410,4 @@ RUBY VERSION
    ruby 2.2.2p95
 
 BUNDLED WITH
-   1.13.2
+   1.13.5

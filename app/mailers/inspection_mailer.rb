@@ -6,6 +6,6 @@ class InspectionMailer < BaseMailer
 
   def send_inspection_to_admin(inspection)
     @inspection = inspection
-    mail(to: admin, subject: 'inspection create admin')
+    mail(to: admin, subject: 'New inspectX inspection')
   end
 end
