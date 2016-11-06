@@ -27,7 +27,7 @@ class Inspection < ActiveRecord::Base
   after_create :send_letter
 
   def corrected_time
-    time.change(month: date.month, day: date.day)
+    time.change(year: date.year, month: date.month, day: date.day)
   end
 
   private

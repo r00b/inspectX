@@ -2,7 +2,7 @@
 = render 'layouts/app_navigation'
 .container
   %section.mechanic-search
-    %p You can search for a mechanic either by their Zip code or by their vehicle speciality
+    %p Search for a Qualified Inspector by ZIP Code or Vehicle Specialty
     = form_tag(mechanics_path, method: "get", id: "search-form") do
       = text_field_tag :search, params[:search], placeholder: "Search Mechanics"
       = submit_tag "Search", name: nil
@@ -25,5 +25,5 @@
             %h4.text-left
               Zip: #{mechanic.zip}
             %h4.text-left
-              Speciality: #{mechanic.speciality}
+              Specialty: #{mechanic.speciality}
 = render 'layouts/footer'
