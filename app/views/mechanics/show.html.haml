@@ -4,29 +4,32 @@
   %section
     .container
       .row
-        .col-md-6
+        .col-md-6.mechanic-profile
           = image_tag @mechanic.picture.url(:thumb) if @mechanic.picture.present?
           %h2.text-align:left.mechanic-name= @mechanic.user.name
-          %h4.text-left.mechanic-zip= @mechanic.zip
+          %h4.text-left.mechanic-zip= @mechanic.city + ", " + @mechanic.state
+          %h4.text-left.mechanic-profile-price= "$" + @mechanic.price
+          %a.scroll.btn.btn-coffee.btn-border.btn-large.mt-20{href: new_mechanic_inspection_path(@mechanic)} Start Inspection
+          %br/
           %br/
           %hr/
           %br/
           %span.mechanic-company
             Company: #{@mechanic.company}
+          %br/
+          %br/
           .mechanic-bio
             %span
               About #{@mechanic.user.name}
             %p= @mechanic.bio
+          %br/
           .mechanic-bio
             %span
               Specialty 1: #{@mechanic.speciality}
           .mechanic-bio
             %span
               Specialty 2: #{@mechanic.second_speciality}
-        .col-md-6
-          %span.mechanic-profile-price
-            $
-            = @mechanic.price
-          .mechanic-start-inspection
-            %a.scroll.btn.btn-coffee.btn-border.btn-large.mt-20{href: new_mechanic_inspection_path(@mechanic)} Start Inspection
+        -# .col-md-6
+        -#   .mechanic-start-inspection
+        -#     %a.scroll.btn.btn-coffee.btn-border.btn-large.mt-20{href: new_mechanic_inspection_path(@mechanic)} Start Inspection
 = render 'layouts/footer'

@@ -1,6 +1,6 @@
 /* ==============================
-   Global styles
-   ============================== */
+Global styles
+============================== */
 html {
   overflow-y: scroll;
   -ms-overflow-style: scrollbar;
@@ -38,8 +38,8 @@ ul {
   list-style-type: none;
 }
 /* ==============================
-   Typography
-   ============================== */
+Typography
+============================== */
 h1,
 h2,
 h3,
@@ -92,8 +92,8 @@ hr {
   border-top: 1px solid #eeeef7;
 }
 /* ==============================
-   Helper clases
-   ============================== */
+Helper clases
+============================== */
 .row {
   padding: 15px 0;
 }
@@ -168,8 +168,8 @@ img.resp {
   font-weight: 500;
 }
 /* ==============================
-   Backgrounds and sections
-   ============================== */
+Backgrounds and sections
+============================== */
 .bg-dark-10,
 .bg-dark-50,
 .bg-dark-80,
@@ -270,8 +270,8 @@ section {
   width: 100%;
 }
 /*
- * Background slider
- */
+* Background slider
+*/
 .bg-slideshow-wrapper {
   position: absolute;
   width: 100%;
@@ -313,8 +313,8 @@ section {
   animation-delay: 16s;
 }
 /*
- * Parallax
- */
+* Parallax
+*/
 .parallax-hero {
   position: fixed;
   top: 0;
@@ -352,8 +352,8 @@ section {
   height: 100% !important;
 }
 /*
- *BG VIdeo
- */
+*BG VIdeo
+*/
 .youtube-bg,
 .bg-video-wrapper,
 .bg-video-overlay {
@@ -394,8 +394,8 @@ section {
   filter: alpha(opacity=0);
 }
 /* ==============================
-   Page loaders
-   ============================== */
+Page loaders
+============================== */
 .page-loader {
   display: block;
   background-color: #f0f0f0;
@@ -529,8 +529,8 @@ section {
   }
 }
 /* ==============================
-   Buttons
-   ============================== */
+Buttons
+============================== */
 .social-links {
   font-size: 16px;
 }
@@ -905,8 +905,8 @@ section {
   }
 }
 /* ==============================
-   Form Field
-   ============================== */
+Form Field
+============================== */
 .form input,
 .form select {
   display: inline-block;
@@ -1004,8 +1004,8 @@ section {
   float: right;
 }
 /* ==============================
-   Navbar
-   ============================== */
+Navbar
+============================== */
 .nav-logo-wrap {
   float: left;
   margin-right: 20px;
@@ -1621,8 +1621,8 @@ a.logo:hover {
   }
 }
 /* ==============================
-   Owl carousel
-   ============================== */
+Owl carousel
+============================== */
 .owl-carousel {
   overflow: hidden;
 }
@@ -1767,8 +1767,8 @@ a.logo:hover {
   text-align: left;
 }
 /* ==============================
-   Headers
-   ============================== */
+Headers
+============================== */
 span.hs {
   font-weight: 400;
 }
@@ -1897,8 +1897,8 @@ span.hs {
   text-decoration: none;
 }
 /* ==============================
-   Hero section
-   ============================== */
+Hero section
+============================== */
 #hero {
 
 }
@@ -1926,11 +1926,11 @@ span.hs {
   margin-right: auto;
 }
 /* ==============================
-   About section
-   ============================== */
+About section
+============================== */
 /*
- * About Item boxes
- */
+* About Item boxes
+*/
 .about-item {
   margin: 60px 0 0 0;
   position: relative;
@@ -1974,8 +1974,8 @@ span.hs {
   color: #00b2ca;
 }
 /*
- * Qoute
- */
+* Qoute
+*/
 .about-quote h5 {
   font-weight: 400;
   color: #222;
@@ -1984,8 +1984,8 @@ span.hs {
   font-size: 18px;
 }
 /*
- * Progress bars
- */
+* Progress bars
+*/
 .progress-box {
   margin-top: 10px;
   margin-bottom: 50px;
@@ -2042,8 +2042,8 @@ span.hs {
   margin-top: 25px;
 }
 /* ==============================
-   Service
-   ============================== */
+Service
+============================== */
 .service-item {
   width: 100%;
   height: 320px;
@@ -2117,8 +2117,8 @@ span.hs {
   transform: scale(1);
 }
 /* ==============================
-   Portfolio
-   ============================== */
+Portfolio
+============================== */
 .filter li {
   display: inline-block;
   margin: 0 10px;
@@ -2259,8 +2259,8 @@ span.hs {
   font-size: 0.8em;
 }
 /*
- * Portfolio single
- */
+* Portfolio single
+*/
 .work-detail {
   color: #777;
   letter-spacing: 1px;
@@ -2276,8 +2276,8 @@ span.hs {
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 /* ==============================
-   Team
-   ============================== */
+Team
+============================== */
 .team-item {
   position: relative;
   margin-bottom: 40px;
@@ -2337,8 +2337,8 @@ span.hs {
   color: #00b2ca;
 }
 /* ==============================
-   Testimonial
-   ============================== */
+Testimonial
+============================== */
 .testimonial {
   margin: 0;
   padding: 0;
@@ -2356,8 +2356,8 @@ span.hs {
   font-size: 18px;
 }
 /* ==============================
-   Pricing
-   ============================== */
+Pricing
+============================== */
 .pricing-item {
   margin: 0 0 30px;
   position: relative;
@@ -2464,8 +2464,8 @@ span.hs {
   background: #00b2ca;
 }
 /* ==============================
-   Contacts section
-   ============================== */
+Contacts section
+============================== */
 .newsletter-res {
   margin-top: 30px;
 }
@@ -2576,10 +2576,10 @@ span.hs {
   display: none;
 }
 /* ==============================
-   Footer
-   ============================== */
+Footer
+============================== */
 footer {
-    position:absolute;
+  position:absolute;
   bottom:0;
   width:100%;
 }
@@ -2616,11 +2616,11 @@ a.scroll-to-top {
   font-size: 48px;
 }
 /* ==============================
-   Blog
-   ============================== */
+Blog
+============================== */
 /*
- * Blog posts
- */
+* Blog posts
+*/
 .post-thumbnail {
   position: relative;
   overflow: hidden;
@@ -2683,8 +2683,8 @@ a.scroll-to-top {
   filter: none;
 }
 /*
- * Blog single
- */
+* Blog single
+*/
 .blog-single .post-title {
   font-size: 1.5em;
   font-weight: 300;
@@ -2738,8 +2738,8 @@ span.separator {
   color: #555;
 }
 /*
- * Pagination
- */
+* Pagination
+*/
 .pagination > li > a,
 .pagination > li > span {
   color: #444;
@@ -2789,8 +2789,8 @@ span.separator {
   color: #111;
 }
 /*
- * Comments
- */
+* Comments
+*/
 .comment-item {
   padding-top: 30px !important;
   border-top: 1px dotted #e9e9e9;
@@ -2834,8 +2834,8 @@ span.separator {
   color: #999;
 }
 /*
- * Sidebar
- */
+* Sidebar
+*/
 .sidebar {
   margin-top: 10px;
 }
@@ -2922,7 +2922,7 @@ span.separator {
 .widget-list li {
   font-size: 13px;
   padding: 8px 0;
-/* Widget post */
+  /* Widget post */
 }
 .widget-list li a {
   color: #555;
@@ -3009,8 +3009,8 @@ span.icon-close {
   vertical-align: middle;
 }
 /* ==============================
-   Magnific popup custom style
-   ============================== */
+Magnific popup custom style
+============================== */
 .mfp-container {
   padding: 0 !important;
 }
@@ -3070,8 +3070,8 @@ span.icon-close {
   filter: alpha(opacity=0);
 }
 /* ==============================
-   Portfolio page
-   ============================== */
+Portfolio page
+============================== */
 .overlay-left,
 .overlay-right {
   width: 50%;
@@ -3099,8 +3099,8 @@ span.icon-close {
   border-right: 1px solid #fff;
 }
 /* ==============================
-   Service
-   ============================== */
+Service
+============================== */
 .features-item {
   margin-top: 70px;
 }
@@ -3131,8 +3131,8 @@ span.icon-close {
   font-size: 20px;
 }
 /* ==============================
-  Intro page
-   ============================== */
+Intro page
+============================== */
 .intro-box .intro-prev {
   margin-bottom: 25px;
 }
@@ -3312,6 +3312,11 @@ span.icon-close {
   }
   .service-item .service-desc p {
     font-size: 15px;
+  }
+}
+@media only screen and (max-width: 610px) {
+  .mechanic-profile img {
+    float: none !important;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -3537,7 +3542,7 @@ main {
   background:#a8a8a8!important;
 }
 .owl-carousel {
- min-height:290px;
+  min-height:290px;
 }
 .select2-selection__clear {
   display:none;
@@ -3560,16 +3565,16 @@ body.content-page footer {
   margin-bottom:10px;
 }
 .mechanic-search #search {
-    padding: 10px;
-    width: 80%;
-    margin: 20px;
+  padding: 10px;
+  width: 80%;
+  margin: 20px;
 }
 .mechanic-search input[type="submit"] {
-      padding: 10px 15px;
-    text-transform: uppercase;
-    background: transparent;
-    border: 2px solid #151515;
-    color: #151515;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #151515;
+  color: #151515;
 }
 .mechanic-overview {
   border:1px solid #151515;
@@ -3580,12 +3585,22 @@ body.content-page footer {
 .mechanic-overview:hover {
   box-shadow:3px 3px 3px #a9a9a9;
 }
+.mechanic-profile {
+  margin-left: 23%;
+  margin-right: 23%
+}
+.mechanic-profile img {
+  float: right;
+}
 .mechanic-price {
-font-size: 26px;
-    color: #151515;
-    text-align: right;
-    float: right;
-    padding-top: 10px;
+  font-size: 26px;
+  color: #151515;
+  text-align: right;
+  float: right;
+  padding-top: 10px;
+}
+.mechanic-profile-price {
+  font-size: 24px;
 }
 .mechanic-brief-section {
   clear:both;
