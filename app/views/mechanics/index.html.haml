@@ -8,21 +8,22 @@
       = submit_tag "Search", name: nil
   %section
     %h1.text-center.mechanic-page-title All Mechanics
-    - if @mechanics.empty?
-      There's no mechanics to show.
-    - @mechanics.each do |mechanic|
-      .col-md-4.mechanic-overview
-        .col-md-8
+    .search-results
+      - if @mechanics.empty?
+        There's no mechanics to show.
+      - @mechanics.each do |mechanic|
+        .col-md-4.mechanic-overview
           = link_to 'View Mechanic', mechanic, class: "scroll btn btn-coffee btn-border btn-large mt-20 text-center"
-        .col-md-4
           %span.mechanic-price
             $#{mechanic.price}
-        .col-md-12.mechanic-brief-section
-          %span.mechanic-name= mechanic.user.present? ? mechanic.user.name : ""
-          %h4.text-left
-            Company: #{mechanic.company}
-          %h4.text-left
-            Zip: #{mechanic.zip}
-          %h4.text-left
-            Specialty: #{mechanic.speciality}
+          .col-md-12.mechanic-brief-section
+            = image_tag mechanic.picture.url(:thumb) if mechanic.picture.present?
+            %span.mechanic-name= mechanic.user.present? ? mechanic.user.name : ""
+            %h4.text-left
+              Company: #{mechanic.company}
+            %h4.text-left
+              Zip: #{mechanic.zip}
+            %h4.text-left
+              Specialty: #{mechanic.speciality}
+
 = render 'layouts/footer'

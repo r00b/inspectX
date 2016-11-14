@@ -97,6 +97,9 @@ hr {
 .row {
   padding: 15px 0;
 }
+.col-md-4 {
+  width: 47%
+}
 .clearlist,
 .clearlist li {
   list-style: none;
@@ -3589,6 +3592,9 @@ font-size: 26px;
   margin-top:15px;
   border-top:1px solid #d9d9d9;
   padding-top:15px;
+}
+.mechanic-brief-section img {
+  float: right;
 }
 .mechanic-name {
   text-transform:uppercase;
