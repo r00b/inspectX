@@ -3160,9 +3160,6 @@ span.icon-close {
   }
 }
 @media only screen and (max-width: 1200px) {
-  .col-md-4 {
-    width: auto;
-  }
   .team-social {
     margin-top: -35px;
     margin-left: 5px;
@@ -3203,6 +3200,9 @@ span.icon-close {
   }
 }
 @media only screen and (max-width: 992px) {
+  .col-md-4 {
+    width: auto;
+  }
   .hs-line-first,
   .hs-line-second,
   .breadcrumbs:not(.align-center) {
