@@ -3157,6 +3157,9 @@ span.icon-close {
   }
 }
 @media only screen and (max-width: 1200px) {
+  .col-md-4 {
+    width: auto;
+  }
   .team-social {
     margin-top: -35px;
     margin-left: 5px;
