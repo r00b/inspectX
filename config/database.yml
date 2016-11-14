@@ -31,3 +31,13 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: d9iq2a8ihjemm5
+#   username: bvknmlczvdllaz
+#   password: j0VsOa_yUlbLdL-Vn-pRRlWJHi
+#   host: ec2-23-21-100-145.compute-1.amazonaws.com
+#   sslmode: require
+#   port: 5432
