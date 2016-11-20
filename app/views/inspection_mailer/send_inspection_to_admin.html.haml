@@ -1,2 +1,12 @@
-%h3 Admin letter
-= @inspection.id
+%h3 A new inspectX inspection has been scheduled. The information is listed below:
+  %br
+  %ul
+    %li Customer name: #{@inspection.your_name}
+    %li Location of inspection: #{@inspection.location}
+    %li Vehicle seller name: #{@inspection.seller_name}
+    %li Vehicle seller address: #{@inspection.seller_address}
+    %li Date of inspection: #{@inspection.date}
+    %li Time of inspection: #{@inspection.time}
+    %li Year/Make/Model of car #{@inspection.vehicle_year}, #{@inspection.vehicle_make}, #{@inspection.vehicle_model}
+    %li Mechanic: #{@inspection.mechanic_id}
+    %li Price: #{@inspection.mechanic_id}
