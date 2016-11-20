@@ -51,12 +51,12 @@ class InspectionsController < ApplicationController
         #     @inspection.save
         #     format.html { redirect_to @inspection, notice: 'Inspection was successfully scheduled.' }
         #     format.json { render :show, status: :created, location: @inspection }
-        else
-          @inspection.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
-
-          format.html { render :new }
-          format.json { render json: @inspection.errors, status: :unprocessable_entity }
-        end
+        # else
+        #   @inspection.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
+        #
+        #   format.html { render :new }
+        #   format.json { render json: @inspection.errors, status: :unprocessable_entity }
+        # end
       else
         format.html { render :new }
         format.json { render json: @inspection.errors, status: :unprocessable_entity }
