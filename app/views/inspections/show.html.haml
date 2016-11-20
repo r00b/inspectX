@@ -1,12 +1,11 @@
 %body.app-page
 = render 'layouts/app_navigation'
 .container
-  -# %p#notice= notice
   %p
     %strong Mechanic:
     = Mechanic.find(@inspection.mechanic_id).user.andand.name
   %p
-    %strong User:
+    %strong Customer:
     = @inspection.your_name
   -# %p
   -#   %strong Location:
