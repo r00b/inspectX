@@ -1,11 +1,13 @@
 %h3 A new inspectX inspection has been scheduled. The information is listed below:
-%br
 %ul
   %li Customer name: #{@inspection.your_name}
+  %li Customer email: #{@inspection.your_email}
+  %li Customer phone: #{@inspection.your_phone}
   %li Vehicle seller name: #{@inspection.seller_name}
   %li Vehicle seller address: #{@inspection.seller_address}
   %li Date of inspection: #{@inspection.date}
   %li Time of inspection: #{@inspection.time}
   %li Year/Make/Model of car #{@inspection.vehicle_year}, #{@inspection.vehicle_make}, #{@inspection.vehicle_model}
-  %li Mechanic: #{Mechanic.find(@inspection.mechanic_id).user.andand.name}
-  %li Price: #{Mechanic.find(@inspection.mechanic_id).price}
+  %li inspectX Mechanic: #{Mechanic.find(@inspection.mechanic_id).user.andand.name}
+  %li Price: $#{Mechanic.find(@inspection.mechanic_id).price}
+  %li Braintree ID: #{@inspection.braintree_id}
