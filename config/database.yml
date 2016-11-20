@@ -9,9 +9,19 @@ default: &default
   pool: 5
   timeout: 5000
 
+# for use with local database
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
+
+# for use with Heroku database
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  host: ec2-23-21-100-145.compute-1.amazonaws.com
+  port: 5432
+  database: d9iq2a8ihjemm5
+  username: bvknmlczvdllaz
+  password: j0VsOa_yUlbLdL-Vn-pRRlWJHi
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,23 +33,11 @@ test:
 production:
   production:
   adapter: postgresql
-  host: 'ec2-54-243-201-19.compute-1.amazonaws.com'
+  host: ec2-23-21-100-145.compute-1.amazonaws.com
   port: 5432
-  database: 'dcscr12j60t618'
-  username: 'kxwtcmjpzrgyfy'
-  password: 'JdZzXwS4eRWGFzQG_aBjOIE02H'
+  database: d9iq2a8ihjemm5
+  username: bvknmlczvdllaz
+  password: j0VsOa_yUlbLdL-Vn-pRRlWJHi
   encoding: unicode
   pool: 5
   timeout: 5000
-
-# production:
-#   production:
-#   adapter: postgresql
-#   host: ec2-23-21-100-145.compute-1.amazonaws.com
-#   port: 5432
-#   database: d9iq2a8ihjemm5
-#   username: bvknmlczvdllaz
-#   password: j0VsOa_yUlbLdL-Vn-pRRlWJHi
-#   encoding: unicode
-#   pool: 5
-#   timeout: 5000

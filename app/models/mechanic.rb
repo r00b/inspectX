@@ -21,6 +21,7 @@ class Mechanic < ActiveRecord::Base
   end
 
   def self.search(search)
+    # NOTE ILIKE doesn't work with SQLite
     where("speciality ILIKE ? OR zip ILIKE ?", "%#{search}%", "%#{search}%")
   end
 
