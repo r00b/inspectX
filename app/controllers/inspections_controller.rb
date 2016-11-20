@@ -33,30 +33,25 @@ class InspectionsController < ApplicationController
 
     respond_to do |format|
       if @inspection.valid?
-        @inspection.save
-        format.html { redirect_to @inspection, notice: 'Inspection was successfully scheduled.' }
-        format.json { render :show, status: :created, location: @inspection }
-        @inspection.braintree_id = 58
-        # @btransaction = Braintree::Transaction.sale(amount: @inspection.mechanic.price,
-        #                                             credit_card: { number: inspection_params[:card_number],
-        #                                                            expiration_year: inspection_params[:card_year],
-        #                                                            expiration_month: inspection_params[:card_month],
-        #                                                            cvv: inspection_params[:cvv] },
-        #                                             customer: { first_name: inspection_params[:your_name],
-        #                                                         email: inspection_params[:your_email] },
-        #                                             billing: { street_address: inspection_params[:your_address] },
-        #                                             options: { submit_for_settlement: true })
-        # if @btransaction.success?
-        #     @inspection.braintree_id = @btransaction.transaction.id
-        #     @inspection.save
-        #     format.html { redirect_to @inspection, notice: 'Inspection was successfully scheduled.' }
-        #     format.json { render :show, status: :created, location: @inspection }
-        # else
-        #   @inspection.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
-        #
-        #   format.html { render :new }
-        #   format.json { render json: @inspection.errors, status: :unprocessable_entity }
-        # end
+        @btransaction = Braintree::Transaction.sale(amount: @inspection.mechanic.price,
+                                                    credit_card: { number: inspection_params[:card_number],
+                                                                   expiration_year: inspection_params[:card_year],
+                                                                   expiration_month: inspection_params[:card_month],
+                                                                   cvv: inspection_params[:cvv] },
+                                                    customer: { first_name: inspection_params[:your_name],
+                                                                email: inspection_params[:your_email] },
+                                                    billing: { street_address: inspection_params[:your_address] },
+                                                    options: { submit_for_settlement: true })
+        if @btransaction.success?
+            @inspection.braintree_id = @btransaction.transaction.id
+            @inspection.save
+            format.html { redirect_to @inspection, notice: 'Inspection was successfully scheduled.' }
+            format.json { render :show, status: :created, location: @inspection }
+        else
+          @inspection.errors.add(:card_number, @btransaction.errors.map(&:message).join(".\n"))
+          format.html { render :new }
+          format.json { render json: @inspection.errors, status: :unprocessable_entity }
+        end
       else
         format.html { render :new }
         format.json { render json: @inspection.errors, status: :unprocessable_entity }
