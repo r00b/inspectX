@@ -1,6 +1,6 @@
 %h3 Congratulations, #{@inspection.your_name}!
   %br
-  %p Your pre-purchase inspection request with #{@inspection.mechanic_id} on #{@inspection.date} at #{@inspection.time} has been confirmed. We'll email you the completed inspection report at #{@inspection.your_email}. Listed below is the information about your upcoming inspection:
+  %p Your pre-purchase inspection request with #{Mechanic.find(@inspection.mechanic_id).user.andand.name} on #{@inspection.date} at #{@inspection.time} has been confirmed. We'll email you the completed inspection report at #{@inspection.your_email}. Listed below is the information about your upcoming inspection:
   %br
   %ul
     %li Location of inspection: #{@inspection.location}
@@ -9,7 +9,7 @@
     %li Date of inspection: #{@inspection.date}
     %li Time of inspection: #{@inspection.time}
     %li Year/Make/Model of car #{@inspection.vehicle_year}, #{@inspection.vehicle_make}, #{@inspection.vehicle_model}
-    %li Mechanic: #{@inspection.mechanic_id}
-    %li Price: #{@inspection.mechanic_id}
+    %li Mechanic: #{Mechanic.find(@inspection.mechanic_id).user.andand.name}
+    %li Price: #{Mechanic.find(@inspection.mechanic_id).user.andand.price}
   %br
   %p Thank you!
