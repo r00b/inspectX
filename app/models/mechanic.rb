@@ -21,7 +21,7 @@ class Mechanic < ActiveRecord::Base
   end
 
   def self.search(search)
-    where("speciality LIKE ? OR zip LIKE ?", "%#{search}%", "%#{search}%")
+    where("speciality ILIKE ? OR zip ILIKE ?", "%#{search}%", "%#{search}%")
   end
 
 end
